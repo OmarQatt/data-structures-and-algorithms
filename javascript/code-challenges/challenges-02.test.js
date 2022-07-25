@@ -9,7 +9,12 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
+  const newArr = [];
 
+  arr.forEach( item => {
+    newArr.push(Math.pow(item, 3));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -32,7 +37,15 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-//
+
+  const addMark = arr.map((item) => item+'?');
+  return addMark;
+  // const addQuestion = (arr) => {
+  //   const newArray = arr.map(function (value){
+  //     return value + '?';
+  //   });
+  //   return newArray;
+  // };
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,7 +59,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  let newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArray[i] = Math.pow(2,arr[i]);
+  }
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,7 +73,12 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
+  const copyItems = [];
+  arr.forEach(function(item){
+    copyItems.push(Math.pow(2,item));
+
+  });
+  return copyItems;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,7 +88,8 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  const newMap= arr.map(num => Math.pow(2,num));
+  return newMap;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,13 +103,8 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  var result = arr.split("");
-  return result.map(function(val) {
-    return val.charCodeAt();
-  }
-
-  );
-
+  const newMap= arr.map(num => num.charCodeAt(0));
+  return newMap;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,7 +118,7 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+//
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -258,7 +276,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
