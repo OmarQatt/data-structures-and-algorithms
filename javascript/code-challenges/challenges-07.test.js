@@ -25,10 +25,8 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  starWarsArr.sort((a,b) => {
-    return b.height - a.height;
-  });
-  return starWarsArr;
+  return starWarsArr.sort((firstEl,secondEl)=> secondEl.height - firstEl.height);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,8 +130,14 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let i = 0;
+  while (i < recipe.ingredients.length)
+  {
+    result.push(recipe.ingredients[i].slice(3).slice(recipe.ingredients[i].slice(3).indexOf(' ')+1));
+    i++;
+  }
   return result;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
