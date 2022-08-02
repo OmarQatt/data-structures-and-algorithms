@@ -66,7 +66,11 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
+  const regex = /[w]/g;
+  const found = str.match(regex);
+  if(found >=1)
+ return true;
+ else return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,7 +86,11 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+  const regex = /[1-9]/g;
+  const found = input.match(regex);
+  if(found >=1)
+ return true;
+ else return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,7 +101,11 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  // Solution code here...
+  const regex = /[world]/g;
+  const found = input.match(regex);
+  if(found >=1)
+ return true;
+ else return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,7 +117,10 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  const found = [];
+  const regex = /\b[A-Z]/g;
+   found = str.match(regex);
+  return found;
 };
 
 /* ------------------------------------------------------------------------------------------------
