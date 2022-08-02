@@ -130,8 +130,16 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
- result= recipe.slice(-1);
+
+  let i = 0;
+  while (i < recipe.ingredients.length)
+  {
+    result.push(recipe.ingredients[i].slice(3).slice(recipe.ingredients[i].slice(3).indexOf(' ')+1));
+    i++;
+  }
+
   return result;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
