@@ -19,7 +19,11 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
-
+  let newArray = [];
+  for (const [key, value] of Object.entries(obj)) {
+     newArray=(`<li>${key}: ${value}</li>`);
+  }
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,11 +37,13 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  let sum=0;
-  for (let i = 0; i < input.length; i++) {
-
-
-  }
+  let sum = 0;
+  input.map(function(subarray) {
+    return subarray.map(function(number) {
+      return number === target? sum+=1: sum=sum;
+    })
+  })
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
